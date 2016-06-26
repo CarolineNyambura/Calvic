@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <meta charset="utf-8"> -->
+    <title>practice</title>
+    <!-- <script src="mithril.min.js"></script> -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/materialize.min.js"></script>
+    <link href="./css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  </head>
+  <body>
+    <!-- <script src="project.js" charset="utf-8"></script> -->
+    <nav class="teal" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="/" class="brand-logo black-text">
+          CALVIC CLUB DVD LENDING SYSTEM
+          <!-- <small>BETA</small> -->
+        </a>
+
+        <ul class="right">
+          <li>
+            <a href="#modal2" class="white-text modal-trigger">Login</a>
+          </li>
+        </ul>
+
+        <ul class="right">
+          <li>
+            <a class="waves-effect waves-light btn modal-trigger " href="#modal1">Get started</a>
+          </li>
+        </ul>
+
+        <ul class="right">
+          <li>
+            <a href="#" class="white-text">Pricing</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <br>
+        <br>
+        <h3 class="header center black-text">Run your DVD library</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">Dont worry about IT infrastructure</h5>
+          <p class="center">
+            We spend our time maintaining reliable and scalable realtime DVD libraries so you can spend yours building your library catalogue.
+          </p>
+        </div>
+        <div class="row center">
+  <a href="#modal1" id="download-button" class="btn-large waves-effect waves-light modal-trigger teal">Get Started</a>
+</div>
+
+  <p class="center">
+    or
+    <a href="#">get in touch with us</a>
+  </p>
+  <div class="section"></div>
+</div>
+
+</div>
+</div>
+
+  <div class="container">
+    <div class="section"></div>
+    <br>
+    <br>
+
+    <div class="section"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="footer-copyright">
+
+      <div class="container">Mentained by
+        <a class="black-text underline" href="#">the Calvic team</a>
+      </a>
+      <a href="/theCollector" class="right black-text">Staff</a>
+    </div>
+  </div>
+</footer>
+
+<!-- modal for login -->
+<div id="modal2" class="modal">
+  <div class="modal-header center">
+    <h5 class="header">Welcome Back!</h5>
+    <i>Do you have an account with Calvic? create an account
+    <a>here</a></i>
+  </div>
+
+  <div class="modal-content">
+  <form class="col s12 center">
+    <div class="row">
+
+      <div class="input-field col s12">
+        <i class="mdi-communication-quick-contacts-mail prefix teal-text"></i>
+        <input id="Email" type="email" class="validate">
+        <label for="Email">Email</label>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="mdi-action-lock prefix teal-text"></i>
+        <input id="Password" type="password" class="validate">
+        <label for="Password">Password</label>
+      </div>
+
+      <p class="container purple-text">
+        <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+        <label for="filled-in-box">Remember me</label>
+
+        <a href="#" class="right grey-text">Forgot password?</a>
+      </p>
+
+      <a class="btn teal modal-action modal-close" href="dashboard.html">login</a>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-header center">
+    <h5 class="header">create a FREE account</h5>
+    <i>...and build scalable realtime library catalogue in seconds</i>
+  </div>
+
+  <div class="modal-content">
+  <div class="row">
+    <form class="col s12 center">
+      <div class="row">
+
+        <div class="input-field col s6">
+          <i class="mdi-action-lock prefix"></i>
+          <input id="First Name" type="text" class="validate">
+          <label for="First Name">First Name</label>
+        </div>
+
+        <div class="input-field col s6">
+          <i class="mdi-action-lock prefix"></i>
+          <input id="Sur Name" type="text" class="validate">
+          <label for="Sur Name">Sur Name</label>
+        </div>
+
+
+
+        <div class="input-field col s12">
+          <i class="mdi-communication-quick-contacts-mail prefix"></i>
+          <input id="Email" type="email" class="validate">
+          <label for="Email">Email</label>
+        </div>
+
+        <div class="input-field col s6">
+          <i class="mdi-action-lock prefix"></i>
+          <input id="Password" type="password" class="validate">
+          <label for="Password">Password</label>
+        </div>
+
+        <div class="input-field col s6">
+          <i class="mdi-action-lock-outline prefix"></i>
+          <input id="Confirm_Password" type="password" class="validate">
+          <label for="Confirm_Password">Confirm Password</label>
+        </div>
+
+        <div class="input-field col s12"
+        <i class="mdi-social-domain prefix"></i>
+        <input id="Company" type="text" class="validate">
+        <label for="contact">Contact</label>
+      </div>
+
+      <small class="center">
+        You agree to the Calvic
+        <a href="#">Terms of Service</a>
+        and Privacy Policy.
+      </small>
+
+        <div class="btn teal modal-action modal-close col s12">Create my free account</div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+  <!-- modals html strcture -->
+  <!-- modal trigger -->
+  <!-- <a class="waves-effect waves-light btn modal-trigger" href=#modal1>Modal</a> -->
+  <!-- modal structure -->
+  <!-- <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>modal header</h4>
+      <p>a bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+  <a class="waves-effect waves-light btn modal-trigger" href=#modal2>Modal</a>
+  <!-- modal structure -->
+  <!-- <div id="modal2" class="modal">
+    <div class="modal-content">
+      <h4>modal header</h4>
+      <p>a bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div> --> -->
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+ // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+ $('.modal-trigger').leanModal();
+});
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

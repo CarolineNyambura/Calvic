@@ -1,0 +1,58 @@
+<html>
+<head>
+  <title>Calvic Dashboard</title>
+
+  <script src="navbar.js"></script>
+  <script src="sidebar.js"></script>
+
+
+
+  <!-- CSS  -->
+  <link href="./css/materialize.min.css" rel="stylesheet">
+  <!-- <link href="../__dependencies/css/styles.css" rel="stylesheet"> -->
+
+  <!-- JS -->
+  <script src="./js/jquery.min.js"></script>
+  <!-- <script src="../__dependencies/js/materialize.min.js"></script> -->
+
+  <!-- View Engine -->
+  <script src="./js/mithril.min.js"></script>
+</head>
+
+<body>
+  <script>
+
+  var test  = {
+    view:function(){
+      return m("div",[
+        m("div","this is a page"),
+        m("a",{
+          href:"/",
+          config:m.route
+        },"dashboard")
+      ])
+    }
+  }
+
+  var dashboard = {
+    view:function(){
+      return m(".app",[
+        // m.component(navbar),
+        // m.component(sidebar)
+        m("a",{
+          href:"/test",
+          config:m.route
+        },"test")
+      ])
+    }
+  }
+
+    // m.mount(document.body, dashboard)
+    m.route(document.body,"/", {
+      "/":dashboard,
+      "/test":test
+    })
+
+</script>
+</body>
+</html>
