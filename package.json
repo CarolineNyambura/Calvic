@@ -1,0 +1,29 @@
+{
+  "name": "clients",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "node server",
+    "start":"node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/sabek/clients.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/sabek/clients/issues"
+  },
+  "homepage": "https://gitlab.com/sabek/clients#README",
+  "dependencies": {
+    "co-views": "^2.1.0",
+    "koa": "^1.2.0",
+    "koa-router": "^5.4.0",
+    "koa-static": "^2.0.0",
+    "swig": "^1.4.2"
+  }
+}
