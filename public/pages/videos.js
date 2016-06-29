@@ -31,8 +31,10 @@
     ])
   }
 
+
   function input(argument){
     return m("input",{
+      class:argument.size,
       placeholder:argument.placeholder,
       oninput: m.withAttr("value",argument.value),
       value:argument.value()
@@ -49,6 +51,7 @@
   view:function (ctrl, args) {
     // body...
     return m("form",{
+      class:"container",
       onsubmit:function(e){
         console.log("i have been d=mhnbvlij")
         videosDb.push({
@@ -59,11 +62,47 @@
         e.preventDefault();
       }
     },[
+
+      // <div class="input-field col s12">
+      //     <i class="mdi-action-lock prefix purple-text"></i>
+      //     <input id="Password" type="password" class="validate">
+      //     <label for="Password">Password</label>
+      //   </div>
+
+      m(".input-field col s12",[
+        m("i",{class:"mdi-action-lock prefix purple-text"}),
+        input({
+          size:"col l3",
+          placeholder:"name",
+          oninput: m.withAttr("value",ctrl.name),
+          value:ctrl.name
+        }),
+      ]),
+
       input({
+        size:"col l3",
         placeholder:"name",
-        oninput: m.withAttr("value",ctrl.name),
-        value:ctrl.name
-      })
+        oninput: m.withAttr("value",ctrl.category),
+        value:ctrl.category
+      }),
+
+      m("btn",{
+        class:"btn",
+        type:"submit",
+        onclick:function(e){
+          console.log("clixked")
+
+          videosDb.push({
+            name:ctrl.name(),
+            category:ctrl.category()
+          }),
+          $('#modal1').closeModal();
+          ctrl.name("")
+          ctrl.category("")
+          e.preventDefault();
+        }
+      },"save")
+
     ])
   }
 }
