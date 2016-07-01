@@ -24,7 +24,7 @@
     return m("." + argument.class,{
       id:argument.id
     },[
-      m("div",{class:"center"},[
+      m("div",[
         m("p","Please input a new video name"),
         m(argument.body)
       ])
@@ -62,35 +62,29 @@
         e.preventDefault();
       }
     },[
-
-      // <div class="input-field col s12">
-      //     <i class="mdi-action-lock prefix purple-text"></i>
-      //     <input id="Password" type="password" class="validate">
-      //     <label for="Password">Password</label>
-      //   </div>
-
       m(".input-field col s12",[
-        m("i",{class:"mdi-action-lock prefix purple-text"}),
+        // m("i",{class:"mdi-action-lock prefix"}),
         input({
-          size:"col l3",
-          placeholder:"name",
+          class:"center",
+          size:"col l6",
+          placeholder:"name of the video",
           oninput: m.withAttr("value",ctrl.name),
           value:ctrl.name
-        }),
+        })
       ]),
 
       input({
-        size:"col l3",
-        placeholder:"name",
+        size:"col l6",
+        placeholder:"category",
         oninput: m.withAttr("value",ctrl.category),
         value:ctrl.category
       }),
 
       m("btn",{
-        class:"btn",
+        class:"btn right",
         type:"submit",
         onclick:function(e){
-          console.log("clixked")
+          console.log("clicked")
 
           videosDb.push({
             name:ctrl.name(),
@@ -117,7 +111,8 @@
       return m("div",{class:"container"},[
         m(".row",[
           m("br"),
-          m(".col l6",m("h4","Video Catalogue")),
+          m(".col l6",
+          m("h5",{class:"header"},"Video Catalogue")),
           m(".col l6",[
             m("br"),
             m("a",{
