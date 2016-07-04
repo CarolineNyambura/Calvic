@@ -1,4 +1,4 @@
-  var videosDb = [{
+   var videosDb = [{
     name:"single ladies",
     category:"thriller"
   },
@@ -19,12 +19,12 @@
       category:"comedy"
     },
   ]
-
+// input function for the modal
   function modalMaker(argument) {
     return m("." + argument.class,{
       id:argument.id
     },[
-      m("div",[
+      m("div",{class:"center"},[
         m("p","Please input a new video name"),
         m(argument.body)
       ])
@@ -62,26 +62,26 @@
         e.preventDefault();
       }
     },[
-      m(".input-field col s12",[
-        // m("i",{class:"mdi-action-lock prefix"}),
+
+      m(".input-field",[
+        // m("i",{class:"mdi-action-lock prefix purple-text"}),
         input({
-          class:"center",
-          size:"col l6",
-          placeholder:"name of the video",
+          size:"col l12",
+          placeholder:"name",
           oninput: m.withAttr("value",ctrl.name),
           value:ctrl.name
-        })
+        }),
       ]),
 
       input({
-        size:"col l6",
-        placeholder:"category",
+        size:"col l12",
+        placeholder:"name",
         oninput: m.withAttr("value",ctrl.category),
         value:ctrl.category
       }),
 
       m("btn",{
-        class:"btn right",
+        class:"btn",
         type:"submit",
         onclick:function(e){
           console.log("clicked")
@@ -95,11 +95,11 @@
           ctrl.category("")
           e.preventDefault();
         }
-      },"save")
-
+      },"save"),
     ])
   }
 }
+
   var videos  = {
     controller:function(){
       return {
@@ -111,8 +111,7 @@
       return m("div",{class:"container"},[
         m(".row",[
           m("br"),
-          m(".col l6",
-          m("h5",{class:"header"},"Video Catalogue")),
+          m(".col l6",m("h5",{class:"header"},"Video Catalogue")),
           m(".col l6",[
             m("br"),
             m("a",{

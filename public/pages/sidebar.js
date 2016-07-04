@@ -52,8 +52,14 @@ var sidebar = {
             buttonClick:function(){
               m.route("/billing")
             }
+          }),
+          sidebutton({
+            name:"Registration",
+            icon:"large mdi-action-account-balance-wallet",
+            buttonClick:function(){
+              m.route("/Registration")
+            }
           })
-
         ])
       ])
     ])

@@ -2,31 +2,31 @@
       name:"final destination",
       category:"horror",
       dateBorrowed:"29-06-016",
-      dateOfReturn:"01-07-016",
+      dateOfReturn:"01-07-016"
     },
     {
       name:"flying monkey",
       category:"horror",
       dateBorrowed:"30-06-016",
-      dateOfReturn:"03-07-016",
+      dateOfReturn:"03-07-016"
     },
     {
       name:"jippers creepers",
       category:"horror",
       dateBorrowed:"01-07-016",
-      dateOfReturn:"03-07-016",
+      dateOfReturn:"03-07-016"
     },
     {
       name:"mirror",
       category:"horror",
       dateBorrowed:"02-07-016",
-      dateOfReturn:"05-07-016",
+      dateOfReturn:"05-07-016"
     },
     {
       name:"a thousand ways to die",
       category:"horror",
       dateBorrowed:"03-07-016",
-      dateOfReturn:"07-07-016",
+      dateOfReturn:"07-07-016"
     },
   ]
   // input for the modal
@@ -47,13 +47,14 @@
       value:argument.value()
     })
   }
+  // main function
   var inputForm = {
     controller:function(){
       return {
         name:m.prop(""),
         category:m.prop(""),
-        dateBorrowed:m.prop(" "),
-        dateOfReturn:m.prop(" ")
+        dateBorrowed:m.prop(""),
+        dateOfReturn:m.prop("")
       }
     },
     view:function (ctrl, args) {
