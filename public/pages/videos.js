@@ -75,7 +75,7 @@
 
       input({
         size:"col l12",
-        placeholder:"name",
+        placeholder:"category",
         oninput: m.withAttr("value",ctrl.category),
         value:ctrl.category
       }),

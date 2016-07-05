@@ -1,7 +1,7 @@
 var billing  = {
   view:function(){
     return m("div",[
-      m("div","billing"),
+      m("div","a printed receipt should be here"),
     ])
   }
 }
