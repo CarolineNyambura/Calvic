@@ -5,7 +5,7 @@ function sidebutton(args){
         m("a",{
           href:"#",
           onclick:function(){
-            console.log("i have bee x"),
+            console.log("i have been selected"),
             args.buttonClick()
           }
         },args.name)
@@ -57,7 +57,7 @@ var sidebar = {
             name:"Registration",
             icon:"large mdi-action-account-balance-wallet",
             buttonClick:function(){
-              m.route("/Registration")
+              m.route("/registration")
             }
           })
         ])

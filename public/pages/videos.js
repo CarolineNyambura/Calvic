@@ -64,7 +64,7 @@
     },[
 
       m(".input-field",[
-        // m("i",{class:"mdi-action-lock prefix purple-text"}),
+        m("i",{class:"mdi-action-lock prefix purple-text"}),
         input({
           size:"col l12",
           placeholder:"name",

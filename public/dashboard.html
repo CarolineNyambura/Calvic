@@ -2,16 +2,15 @@
 <head>
   <title>Calvic Dashboard</title>
 
-  <script src="pages/navbar.js"></script>
+  <!-- <script src="pages/navbar.js"></script> -->
   <script src="pages/sidebar.js"></script>
   <script src="pages/billing.js"></script>
   <script src="pages/borrowed.js"></script>
   <script src="pages/returned.js"></script>
   <script src="pages/videos.js"></script>
-  <script src="/pages/registration.js"></script>
+  <script src="pages/registration.js"></script>
 
- 
-
+  
 
   <!-- CSS  -->
   <link href="./css/materialize.min.css" rel="stylesheet">
@@ -52,7 +51,7 @@
         m("a",{
           href:"/test",
           config:m.route
-        },"test")
+        },"loading . . .")
       ])
     }
   }
@@ -60,7 +59,7 @@
   var layoutComponent = {
     view:function(ctrl, args){
       return m(".app",[
-        m.component(navbar),
+        // m.component(navbar),
         m.component(sidebar),
         m("main",[
           m(args.body)
@@ -90,7 +89,7 @@
       }),
       "/registration":m(layoutComponent,{
         body:registration
-      }),
+      })
     })
 
 </script>

@@ -24,6 +24,7 @@
        dateBorrowed: "03-07-016",
        dateOfReturn: "07-07-016"
      }, ]
+
      // input function for the modal
    function modalMaker(argument) {
      return m("." + argument.class, {
@@ -47,14 +48,14 @@
        value: argument.value()
      })
    }
-
+   
    var inputForm = {
      controller: function() {
        return {
          name: m.prop(""),
          category: m.prop(""),
-         dateBorrowed: m.prop(" "),
-         dateOfReturn: m.prop(" ")
+         dateBorrowed: m.prop(""),
+         dateOfReturn: m.prop("")
        }
      },
      view: function(ctrl, args) {
@@ -88,14 +89,12 @@
              oninput: m.withAttr("value", ctrl.category),
              value: ctrl.category
            }),
-
            input({
              size: "col l12",
              placeholder: "dateBorrowed",
              oninput: m.withAttr("value", ctrl.dateBorrowed),
              value: ctrl.dateBorrowed
            }),
-
            input({
              size: "col l12",
              placeholder: "dateOfReturn",
