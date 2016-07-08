@@ -1,8 +1,12 @@
  var membersDb = [{
  		name: "Caroline Nyambura",
+ 		email: "karolinanyambura67@gmail.com",
+ 		confirmPassword: " ",
  		contact: "0720923708"
  	}, {
  		name: "Branson Gitomeh",
+ 		email: "bransongitomeh67@gmail.com",
+ 		confirmPassword: " ",
  		contact: "0711657108"
  	}]
  	// input function for the modal
@@ -24,16 +28,19 @@
  	return m("input", {
  		class: argument.size,
  		placeholder: argument.placeholder,
- 		oninput: m.withAttr("value", argument.value)
- 			// value: argument.value()
+ 		oninput: m.withAttr("value", argument.value),
+ 		// value: argument.value()
  	})
  }
 
-// this is the form that will be in the modal
+ // this is the form that will be in the modal
  var registrationForm = {
  	controller: function() {
  		return {
  			name: m.prop(""),
+ 			email: m.prop(""),
+ 			password: m.prop(""),
+ 			confirmPassword: m.prop(""),
  			contact: m.prop("")
  		}
  	},
@@ -45,65 +52,67 @@
  				console.log("i have been d=mhnbvlij")
  				membersDb.push({
  						name: ctrl.name(),
+ 						email: ctrl.email(),
+ 						password: ctrl.password(),
+ 						confirmPassword: ctrl.confirmPassword(),
  						contact: ctrl.contact()
  					}),
  					$('#modal4').closeModal();
  				e.preventDefault();
  			}
  		}, [
- 			m("div", {
- 				class: "row col l12"
- 			}, [
- 				m(".input-field col l6", [
- 					input({
- 						// class: "mdi-action-lock prefix teal-text",
- 						placeholder: "First Name",
- 						oninput: m.withAttr("value", ctrl.name),
- 						value: ctrl.name
- 					})
- 				]),
-
- 				m(".input-field col l6", [
- 					input({
- 						placeholder: "Sur Name",
- 						oninput: m.withAttr("value", ctrl.name),
- 						value: ctrl.name
- 					})
- 				]),
- 				m(".input-field", [
- 					input({
- 						placeholder: "Email",
- 						oninput: m.withAttr("value", ctrl.Email),
- 						value: ctrl.Email,
- 						// class: "mdi-communication-quick-contacts-mail prefix",
-
- 					})
- 				]),
-
- 				m(".input-field col l6", [
- 					input({
- 						placeholder: "Password",
- 						oninput: m.withAttr("value", ctrl.Password),
- 						value: ctrl.Password
- 					})
- 				]),
- 				m(".input-field col l6", [
- 					input({
- 						placeholder: "Confirm Password",
- 						oninput: m.withAttr("value", ctrl.confirmPassword),
- 						value: ctrl.confirmPassword
- 					})
- 				]),
- 				m("input-field", [
- 					input({
- 						placeholder: "Contact",
- 						oninput: m.withAttr("value", ctrl.contact),
- 						value: ctrl.contact
- 					})
- 				])
+ 			m(".input-field", [
+ 				m("i", {
+ 					class: "mdi-action-lock prefix"
+ 				}),
+ 				input({
+ 					placeholder: "your full name",
+ 					oninput: m.withAttr("value", ctrl.name),
+ 					value: ctrl.firstName
+ 				})
  			]),
-
-
+ 			m(".input-field", [
+ 				m("i", {
+ 					class: "mdi-communication-quick-contacts-mail prefix teal-text"
+ 				}),
+ 				input({
+ 					placeholder: "Email Address",
+ 					oninput: m.withAttr("value", ctrl.email),
+ 					value: ctrl.email,
+ 				})
+ 			]),
+ 			m(".input-field col l6", [
+ 				m("i", {
+ 					class: "mdi-action-lock-outline prefix teal-text"
+ 				}),
+ 				input({
+ 					type: "password",
+ 					placeholder: "Password",
+ 					oninput: m.withAttr("value", ctrl.password),
+ 					value: ctrl.password
+ 				})
+ 			]),
+ 			m(".input-field col l6", [
+ 				m("i", {
+ 					class: "mdi-action-lock-outline prefix"
+ 				}),
+ 				input({
+ 					type: "password",
+ 					placeholder: "Confirm Password",
+ 					oninput: m.withAttr("value", ctrl.confirmPassword),
+ 					value: ctrl.confirmPassword
+ 				})
+ 			]),
+ 			m(".input-field", [
+ 				m("i", {
+ 					class: "mdi-action-lock prefix"
+ 				}),
+ 				input({
+ 					placeholder: "Contact",
+ 					oninput: m.withAttr("value", ctrl.contact),
+ 					value: ctrl.contact
+ 				})
+ 			]),
 
  			m("btn", {
  				class: "btn",
@@ -113,12 +122,12 @@
 
  					membersDb.push({
  							name: ctrl.name(),
+ 							email: ctrl.email(),
+ 							password: ctrl.password(),
+ 							confirmPassword: ctrl.confirmPassword(),
  							contact: ctrl.contact()
  						}),
  						$('#modal4').closeModal();
- 					ctrl.name("")
- 					ctrl.contact("")
- 					e.preventDefault();
  				}
  			}, "Print"),
  		])
@@ -145,7 +154,7 @@
  					m("br"),
  					m("a", {
  						class: "btn right",
- 						// href: "#modal4",
+ 						href: "#modal4",
  						onclick: function() {
  							$('#modal4').openModal();
  						},
@@ -164,7 +173,9 @@
  			m("table", [
  				m("thead", [
  					m("tr", [
- 						m("th", "Name"),
+ 						m("th", "name"),
+ 						m("th", "email"),
+ 						m("th", "password"),
  						m("th", "contact")
  					])
  				]),
@@ -172,6 +183,8 @@
  					ctrl.registrations.map(function(registration) {
  						return m("tr", [
  							m("td", registration.name),
+ 							m("td", registration.email),
+ 							m("td", registration.password),
  							m("td", registration.contact)
  						])
  					})

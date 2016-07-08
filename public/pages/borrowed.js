@@ -1,31 +1,31 @@
-   var videosDb = [{
-       name: "single ladies",
-       category: "thriller",
-       dateBorrowed: "29-06-016",
-       dateOfReturn: "01-07-016"
-     }, {
-       name: "brave",
-       category: "cartoon",
-       dateBorrowed: "30-06-016",
-       dateOfReturn: "03-07-016"
-     }, {
-       name: "originals",
-       category: "general",
-       dateBorrowed: "01-07-016",
-       dateOfReturn: "03-07-016"
-     }, {
-       name: "vanish",
-       category: "horror",
-       dateBorrowed: "02-07-016",
-       dateOfReturn: "05-07-016"
-     }, {
-       name: "two broke girls",
-       category: "comedy",
-       dateBorrowed: "03-07-016",
-       dateOfReturn: "07-07-016"
-     }, ]
+   var borrowedDb = [{
+     name: "single ladies",
+     category: "thriller",
+     dateBorrowed: "29-06-016",
+     dateOfReturn: "01-07-016"
+   }, {
+     name: "brave",
+     category: "cartoon",
+     dateBorrowed: "30-06-016",
+     dateOfReturn: "03-07-016"
+   }, {
+     name: "originals",
+     category: "general",
+     dateBorrowed: "01-07-016",
+     dateOfReturn: "03-07-016"
+   }, {
+     name: "vanish",
+     category: "horror",
+     dateBorrowed: "02-07-016",
+     dateOfReturn: "05-07-016"
+   }, {
+     name: "two broke girls",
+     category: "comedy",
+     dateBorrowed: "03-07-016",
+     dateOfReturn: "07-07-016"
+   }, ]
 
-//call this function to make a modal
+   //call this function to make a modal
    function modalMaker(argument) {
      return m("." + argument.class, {
        id: argument.id
@@ -40,7 +40,7 @@
    }
 
 
-// call this function to make an input
+   // call this function to make an input
    function input(argument) {
      return m("input", {
        class: argument.size,
@@ -49,8 +49,8 @@
        value: argument.value()
      })
    }
-   
-   var inputForm = {
+
+   var borrowedForm = {
      controller: function() {
        return {
          name: m.prop(""),
@@ -64,8 +64,8 @@
        return m("form", {
          class: "container",
          onsubmit: function(e) {
-           console.log("i have been d=mhnbvlij")
-           videosDb.push({
+           console.log("i have been logged")
+           borrowedDb.push({
                name: ctrl.name(),
                category: ctrl.category(),
                dateBorrowed: ctrl.dateBorrowed(),
@@ -75,41 +75,33 @@
            e.preventDefault();
          }
        }, [
-
-         // m(".input-field", [
-           // m("i",{class:"mdi-action-lock prefix purple-text"}),
-           input({
-             size: "col l12",
-             placeholder: "name",
-             oninput: m.withAttr("value", ctrl.name),
-             value: ctrl.name
-           }),
-           input({
-             size: "col l12",
-             placeholder: "category",
-             oninput: m.withAttr("value", ctrl.category),
-             value: ctrl.category
-           }),
-           input({
-             size: "col l12",
-             placeholder: "dateBorrowed",
-             oninput: m.withAttr("value", ctrl.dateBorrowed),
-             value: ctrl.dateBorrowed
-           }),
-           input({
-             size: "col l12",
-             placeholder: "dateOfReturn",
-             oninput: m.withAttr("value", ctrl.dateOfReturn),
-             value: ctrl.dateOfReturn
-           }),
-         // ]),
+         input({
+           placeholder: "name",
+           oninput: m.withAttr("value", ctrl.name),
+           value: ctrl.name
+         }),
+         input({
+           placeholder: "category",
+           oninput: m.withAttr("value", ctrl.category),
+           value: ctrl.category
+         }),
+         input({
+           placeholder: "dateBorrowed",
+           oninput: m.withAttr("value", ctrl.dateBorrowed),
+           value: ctrl.dateBorrowed
+         }),
+         input({
+           placeholder: "dateOfReturn",
+           oninput: m.withAttr("value", ctrl.dateOfReturn),
+           value: ctrl.dateOfReturn
+         }),
          m("btn", {
            class: "btn",
            type: "submit",
            onclick: function(e) {
              console.log("clicked")
 
-             videosDb.push({
+             borrowedDb.push({
                  name: ctrl.name(),
                  category: ctrl.category(),
                  dateBorrowed: ctrl.dateBorrowed(),
@@ -130,11 +122,11 @@
    var borrowed = {
      controller: function() {
        return {
-         videos: videosDb
+         borrowings: borrowedDb
        }
      },
      view: function(ctrl, args) {
-       console.log(ctrl.videos)
+       console.log(ctrl.borrowings)
        return m("div", {
          class: "container"
        }, [
@@ -158,7 +150,7 @@
              modalMaker({
                id: "modal2",
                class: "modal",
-               body: inputForm
+               body: borrowedForm
              })
            ])
          ]),
@@ -172,12 +164,12 @@
              ])
            ]),
            m("tbody", [
-             ctrl.videos.map(function(video) {
+             ctrl.borrowings.map(function(borrowing) {
                return m("tr", [
-                 m("td", video.name),
-                 m("td", video.category),
-                 m("td", video.dateBorrowed),
-                 m("td", video.dateOfReturn)
+                 m("td", borrowing.name),
+                 m("td", borrowing.category),
+                 m("td", borrowing.dateBorrowed),
+                 m("td", borrowing.dateOfReturn)
                ])
              })
            ])

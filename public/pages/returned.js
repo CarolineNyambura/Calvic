@@ -74,7 +74,7 @@
   			class: "container",
   			onsubmit: function(e) {
   				console.log("i have been selected")
-  				videosDb.push({
+  				returnedDb.push({
   						name: ctrl.name(),
   						category: ctrl.category(),
   						dateBorrowed: ctrl.dateBorrowed(),
@@ -121,7 +121,7 @@
   				type: "submit",
   				onclick: function(e) {
   					console.log("clicked")
-  					videosDb.push({
+  					returnedDb.push({
   							name: ctrl.name(),
   							category: ctrl.category(),
   							dateBorrowed: ctrl.dateBorrowed(),
@@ -145,11 +145,11 @@
   var returned = {
   	controller: function() {
   		return {
-  			videos: videosDb
+  			returnings: returnedDb
   		}
   	},
   	view: function(ctrl, args) {
-  		console.log(ctrl.videos)
+  		console.log(ctrl.returnings)
   		return m("div", {
   			class: "container"
   		}, [
@@ -190,14 +190,14 @@
   					])
   				]),
   				m("tbody", [
-  					ctrl.videos.map(function(video) {
+  					ctrl.returnings.map(function(returning) {
   						return m("tr", [
-  							m("td", video.name),
-  							m("td", video.category),
-  							m("td", video.dateBorrowed),
-  							m("td", video.dateOfReturn),
-  							m("td", video.dueDate),
-  							m("td", video.daysOverdue)
+  							m("td", returning.name),
+  							m("td", returning.category),
+  							m("td", returning.dateBorrowed),
+  							m("td", returning.dateOfReturn),
+  							m("td", returning.dueDate),
+  							m("td", returning.daysOverdue)
   						])
   					})
   				])
