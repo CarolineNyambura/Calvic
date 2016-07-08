@@ -55,7 +55,7 @@
  			}, [
  				m(".input-field col l6", [
  					input({
- 						class: "mdi-action-lock prefix teal-text",
+ 						// class: "mdi-action-lock prefix teal-text",
  						placeholder: "First Name",
  						oninput: m.withAttr("value", ctrl.name),
  						value: ctrl.name
