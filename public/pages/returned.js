@@ -57,7 +57,7 @@
   	})
   }
 
-  var inputForm = {
+  var returnedForm = {
   	controller: function() {
   		return {
   			name: m.prop(""),
@@ -174,7 +174,7 @@
   					modalMaker({
   						id: "modal3",
   						class: "modal",
-  						body: inputForm
+  						body: returnedForm
   					})
   				])
   			]),

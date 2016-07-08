@@ -29,7 +29,8 @@
  	})
  }
 
- var inputForm = {
+// this is the form that will be in the modal
+ var registrationForm = {
  	controller: function() {
  		return {
  			name: m.prop(""),
@@ -155,7 +156,8 @@
  					modalMaker({
  						id: "modal4",
  						class: "modal",
- 						body: inputForm
+ 						//name of the component that will be in the modal
+ 						body: registrationForm
  					})
  				])
  			]),

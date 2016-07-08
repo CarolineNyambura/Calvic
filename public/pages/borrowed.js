@@ -25,7 +25,7 @@
        dateOfReturn: "07-07-016"
      }, ]
 
-     // input function for the modal
+//call this function to make a modal
    function modalMaker(argument) {
      return m("." + argument.class, {
        id: argument.id
@@ -40,6 +40,7 @@
    }
 
 
+// call this function to make an input
    function input(argument) {
      return m("input", {
        class: argument.size,
