@@ -33,7 +33,6 @@
        m("div", {
          class: "center"
        }, [
-         m("p", "Please input a new video name"),
          m(argument.body)
        ])
      ])
@@ -61,46 +60,15 @@
      },
      view: function(ctrl, args) {
        // body...
-       return m("form", {
-         class: "container",
-         onsubmit: function(e) {
-           console.log("i have been logged")
-           borrowedDb.push({
-               name: ctrl.name(),
-               category: ctrl.category(),
-               dateBorrowed: ctrl.dateBorrowed(),
-               dateOfReturn: ctrl.dateOfReturn()
-             }),
-             $('#modal2').closeModal();
-           e.preventDefault();
-         }
-       }, [
-         input({
-           placeholder: "name",
-           oninput: m.withAttr("value", ctrl.name),
-           value: ctrl.name
-         }),
-         input({
-           placeholder: "category",
-           oninput: m.withAttr("value", ctrl.category),
-           value: ctrl.category
-         }),
-         input({
-           placeholder: "dateBorrowed",
-           oninput: m.withAttr("value", ctrl.dateBorrowed),
-           value: ctrl.dateBorrowed
-         }),
-         input({
-           placeholder: "dateOfReturn",
-           oninput: m.withAttr("value", ctrl.dateOfReturn),
-           value: ctrl.dateOfReturn
-         }),
-         m("btn", {
-           class: "btn",
-           type: "submit",
-           onclick: function(e) {
-             console.log("clicked")
+       return m("div", [
+         m(".modal-header", [
+           m("p", "Please input a new video name")
+         ]),
 
+         m("form", {
+           class: "container",
+           onsubmit: function(e) {
+             console.log("i have been logged")
              borrowedDb.push({
                  name: ctrl.name(),
                  category: ctrl.category(),
@@ -108,13 +76,53 @@
                  dateOfReturn: ctrl.dateOfReturn()
                }),
                $('#modal2').closeModal();
-             ctrl.name("")
-             ctrl.category("")
-             ctrl.dateBorrowed("")
-             ctrl.dateOfReturn("")
              e.preventDefault();
            }
-         }, "save"),
+         }, [
+           input({
+             placeholder: "name",
+             oninput: m.withAttr("value", ctrl.name),
+             value: ctrl.name
+           }),
+           input({
+             placeholder: "category",
+             oninput: m.withAttr("value", ctrl.category),
+             value: ctrl.category
+           }),
+           input({
+             placeholder: "dateBorrowed",
+             oninput: m.withAttr("value", ctrl.dateBorrowed),
+             value: ctrl.dateBorrowed
+           }),
+           input({
+             placeholder: "dateOfReturn",
+             oninput: m.withAttr("value", ctrl.dateOfReturn),
+             value: ctrl.dateOfReturn
+           }),
+         ]),
+
+         m(".modal-footer", [
+           m("btn", {
+             class: "btn",
+             type: "submit",
+             onclick: function(e) {
+               console.log("clicked")
+
+               borrowedDb.push({
+                   name: ctrl.name(),
+                   category: ctrl.category(),
+                   dateBorrowed: ctrl.dateBorrowed(),
+                   dateOfReturn: ctrl.dateOfReturn()
+                 }),
+                 $('#modal2').closeModal();
+               ctrl.name("")
+               ctrl.category("")
+               ctrl.dateBorrowed("")
+               ctrl.dateOfReturn("")
+               e.preventDefault();
+             }
+           }, "save"),
+         ])
        ])
      }
    }

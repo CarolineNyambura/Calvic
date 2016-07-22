@@ -17,7 +17,6 @@
  		m("div", {
  			class: "center"
  		}, [
- 			m("p", "Membership Card"),
  			m(argument.body)
  		])
  	])
@@ -33,7 +32,7 @@
  	})
  }
 
- // this is the form that will be in the modal
+ // this is the form that will be in the modal8
  var registrationForm = {
  	controller: function() {
  		return {
@@ -46,80 +45,16 @@
  	},
  	view: function(ctrl, args) {
  		// body...
- 		return m("form", {
- 			class: "container",
- 			onsubmit: function(e) {
- 				console.log("i have been d=mhnbvlij")
- 				membersDb.push({
- 						name: ctrl.name(),
- 						email: ctrl.email(),
- 						password: ctrl.password(),
- 						confirmPassword: ctrl.confirmPassword(),
- 						contact: ctrl.contact()
- 					}),
- 					$('#modal4').closeModal();
- 				e.preventDefault();
- 			}
- 		}, [
- 			m(".input-field", [
- 				m("i", {
- 					class: "mdi-action-lock prefix"
- 				}),
- 				input({
- 					placeholder: "your full name",
- 					oninput: m.withAttr("value", ctrl.name),
- 					value: ctrl.firstName
- 				})
- 			]),
- 			m(".input-field", [
- 				m("i", {
- 					class: "mdi-communication-quick-contacts-mail prefix teal-text"
- 				}),
- 				input({
- 					placeholder: "Email Address",
- 					oninput: m.withAttr("value", ctrl.email),
- 					value: ctrl.email,
- 				})
- 			]),
- 			m(".input-field col l6", [
- 				m("i", {
- 					class: "mdi-action-lock-outline prefix teal-text"
- 				}),
- 				input({
- 					type: "password",
- 					placeholder: "Password",
- 					oninput: m.withAttr("value", ctrl.password),
- 					value: ctrl.password
- 				})
- 			]),
- 			m(".input-field col l6", [
- 				m("i", {
- 					class: "mdi-action-lock-outline prefix"
- 				}),
- 				input({
- 					type: "password",
- 					placeholder: "Confirm Password",
- 					oninput: m.withAttr("value", ctrl.confirmPassword),
- 					value: ctrl.confirmPassword
- 				})
- 			]),
- 			m(".input-field", [
- 				m("i", {
- 					class: "mdi-action-lock prefix"
- 				}),
- 				input({
- 					placeholder: "Contact",
- 					oninput: m.withAttr("value", ctrl.contact),
- 					value: ctrl.contact
- 				})
+ 		return m("div", [
+
+ 			m(".modal-header", [
+ 				m("p", "Membership Card")
  			]),
 
- 			m("btn", {
- 				class: "btn",
- 				type: "submit",
- 				onclick: function(e) {
- 					console.log("clicked")
-
+ 			m("form", {
+ 				class: "container",
+ 				onsubmit: function(e) {
+ 					console.log("i have been d=mhnbvlij")
  					membersDb.push({
  							name: ctrl.name(),
  							email: ctrl.email(),
@@ -128,8 +63,84 @@
  							contact: ctrl.contact()
  						}),
  						$('#modal4').closeModal();
+ 					e.preventDefault();
  				}
- 			}, "Print"),
+ 			}, [
+
+ 				m(".input-field", [
+ 					m("i", {
+ 						class: "mdi-action-lock prefix"
+ 					}),
+ 					input({
+ 						placeholder: "your full name",
+ 						oninput: m.withAttr("value", ctrl.name),
+ 						value: ctrl.name
+ 					})
+ 				]),
+ 				m(".input-field", [
+ 					m("i", {
+ 						class: "mdi-communication-quick-contacts-mail prefix teal-text"
+ 					}),
+ 					input({
+ 						placeholder: "Email Address",
+ 						oninput: m.withAttr("value", ctrl.email),
+ 						value: ctrl.email,
+ 					})
+ 				]),
+ 				m(".input-field", [
+ 					m("i", {
+ 						class: "mdi-action-lock-outline prefix teal-text"
+ 					}),
+ 					input({
+ 						type: "password",
+ 						placeholder: "Password",
+ 						oninput: m.withAttr("value", ctrl.password),
+ 						value: ctrl.password
+ 					})
+ 				]),
+ 				m(".input-field", [
+ 					m("i", {
+ 						class: "mdi-action-lock-outline prefix"
+ 					}),
+ 					input({
+ 						type: "password",
+ 						placeholder: "Confirm Password",
+ 						oninput: m.withAttr("value", ctrl.confirmPassword),
+ 						value: ctrl.confirmPassword
+ 					})
+ 				]),
+ 				m(".input-field", [
+ 					m("i", {
+ 						class: "mdi-action-lock prefix"
+ 					}),
+ 					input({
+ 						placeholder: "Contact",
+ 						oninput: m.withAttr("value", ctrl.contact),
+ 						value: ctrl.contact
+ 					})
+ 				]),
+
+
+ 			]),
+
+ 			m(".modal-footer", [
+ 				m("btn", {
+ 					class: "btn",
+ 					type: "submit",
+ 					onclick: function(e) {
+ 						console.log("clicked")
+
+ 						membersDb.push({
+ 								name: ctrl.name(),
+ 								email: ctrl.email(),
+ 								password: ctrl.password(),
+ 								confirmPassword: ctrl.confirmPassword(),
+ 								contact: ctrl.contact()
+ 							}),
+ 							$('#modal4').closeModal();
+ 					}
+ 				}, "Print"),
+ 			]),
  		])
  	}
  }
@@ -161,7 +172,7 @@
  						config: function() {
  							$('.modal-trigger').leanModal();
  						}
- 					}, "Save"),
+ 					}, "Add Member"),
  					modalMaker({
  						id: "modal4",
  						class: "modal",

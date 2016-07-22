@@ -21,7 +21,6 @@
 			m("div", {
 				class: "center"
 			}, [
-				m("p", "Membership Card"),
 				m(argument.body)
 			])
 		])
@@ -50,68 +49,15 @@
 		},
 		view: function(ctrl, args) {
 			// body...
-			return m("form", {
-				class: "container",
-				onsubmit: function(e) {
-					console.log("i have been d=mhnbvlij")
-					billingDb.push({
-							name: ctrl.name(),
-							movieName: ctrl.movieName(),
-							category: ctrl.category(),
-							moviesBorrowed: ctrl.moviesBorrowed(),
-							contact: ctrl.contact()
-						}),
-						$('#modal5').closeModal();
-					e.preventDefault();
-				}
-			}, [
-				m("div", {
-					class: "row"
-				}, [
-					m(".input-field", [
-						input({
-							placeholder: "your full name",
-							oninput: m.withAttr("value", ctrl.name),
-							value: ctrl.name
-						})
-					]),
-					m(".input-field", [
-						input({
-							placeholder: "name of the movie",
-							oninput: m.withAttr("value", ctrl.movieName),
-							value: ctrl.movieName,
-						})
-					]),
-					m(".input-field col l6", [
-						input({
-							type: "category",
-							placeholder: "category",
-							oninput: m.withAttr("value", ctrl.category),
-							value: ctrl.category
-						})
-					]),
-					m(".input-field col l6", [
-						input({
-							type: "text",
-							placeholder: "number of the movies borrowed",
-							oninput: m.withAttr("value", ctrl.moviesBorrowed),
-							value: ctrl.moviesBorrowed
-						})
-					]),
-					m("input-field", [
-						input({
-							placeholder: "Contact",
-							oninput: m.withAttr("value", ctrl.contact),
-							value: ctrl.contact
-						})
-					])
+			return m("div", [
+				m(".modal-header", [
+					m("p", "Membership Card")
 				]),
-				m("btn", {
-					class: "btn",
-					type: "submit",
-					onclick: function(e) {
-						console.log("clicked")
 
+				m("form", {
+					class: "container",
+					onsubmit: function(e) {
+						console.log("i have been d=mhnbvlij")
 						billingDb.push({
 								name: ctrl.name(),
 								movieName: ctrl.movieName(),
@@ -120,9 +66,84 @@
 								contact: ctrl.contact()
 							}),
 							$('#modal5').closeModal();
+						e.preventDefault();
 					}
-				}, "Print"),
+				}, [
+					m("div", {
+						class: "row"
+					}, [
+						m(".input-field", [
+							input({
+								placeholder: "your full name",
+								oninput: m.withAttr("value", ctrl.name),
+								value: ctrl.name
+							})
+						]),
+						m(".input-field", [
+							input({
+								placeholder: "name of the movie",
+								oninput: m.withAttr("value", ctrl.movieName),
+								value: ctrl.movieName,
+							})
+						]),
+						m(".input-field col l6", [
+							input({
+								type: "category",
+								placeholder: "category",
+								oninput: m.withAttr("value", ctrl.category),
+								value: ctrl.category
+							})
+						]),
+						m(".input-field col l6", [
+							input({
+								type: "text",
+								placeholder: "number of the movies borrowed",
+								oninput: m.withAttr("value", ctrl.moviesBorrowed),
+								value: ctrl.moviesBorrowed
+							})
+						]),
+						m("input-field", [
+							input({
+								placeholder: "Contact",
+								oninput: m.withAttr("value", ctrl.contact),
+								value: ctrl.contact
+							})
+						]), 
+						// < p >
+						//   <input type="checkbox" id="test6" checked="checked" />
+						//   <label for="test6">Yellow</label>
+						// </p>
+						// m("input-field", [
+						// 	input({
+						// 		type: "checkbox",
+						// 		id: "test6",
+						// 		checked: "checked",
+						// 		labelFor:"test6"
+						// 	},"Yellow"),
+						// ])
+					]),
+
+					m(".modal-footer", [
+						m("btn", {
+							class: "btn",
+							type: "submit",
+							onclick: function(e) {
+								console.log("clicked")
+
+								billingDb.push({
+										name: ctrl.name(),
+										movieName: ctrl.movieName(),
+										category: ctrl.category(),
+										moviesBorrowed: ctrl.moviesBorrowed(),
+										contact: ctrl.contact()
+									}),
+									$('#modal5').closeModal();
+							}
+						}, "Print"),
+					])
+				])
 			])
+
 		}
 	}
 
