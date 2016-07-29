@@ -1,0 +1,768 @@
+{
+  "data": {
+    "foo": [
+      {
+        "name": "caro",
+        "createdAt": "2016-07-25T11:55:09.033Z",
+        "updatedAt": "2016-07-25T11:55:09.033Z",
+        "id": 1
+      },
+      {
+        "name": "caro",
+        "age": "23",
+        "clan": "nyamothie",
+        "createdAt": "2016-07-25T12:04:27.917Z",
+        "updatedAt": "2016-07-25T12:04:27.917Z",
+        "id": 2
+      },
+      {
+        "name": "caro",
+        "age": "23",
+        "clan": "nyamothie",
+        "createdAt": "2016-07-25T12:04:41.005Z",
+        "updatedAt": "2016-07-25T12:04:41.005Z",
+        "id": 3
+      },
+      {
+        "name": "caro",
+        "age": "23",
+        "clan": "nyamothie",
+        "createdAt": "2016-07-25T12:04:41.452Z",
+        "updatedAt": "2016-07-25T12:04:41.452Z",
+        "id": 4
+      },
+      {
+        "name": "caro",
+        "age": "23",
+        "clan": "nyamothie",
+        "createdAt": "2016-07-25T12:04:41.880Z",
+        "updatedAt": "2016-07-25T12:04:41.880Z",
+        "id": 5
+      },
+      {
+        "name": "caro",
+        "age": "23",
+        "clan": "nyamothie",
+        "createdAt": "2016-07-25T12:04:49.509Z",
+        "updatedAt": "2016-07-25T12:04:49.509Z",
+        "id": 6
+      },
+      {
+        "name": "caro",
+        "age": "23",
+        "clan": "nyamothie",
+        "createdAt": "2016-07-25T12:04:49.936Z",
+        "updatedAt": "2016-07-25T12:04:49.936Z",
+        "id": 7
+      }
+    ],
+    "users": [],
+    "members": [
+      {
+        "name": "caroline",
+        "email": "misscaro@gmail.com",
+        "contact": "09865434567890-",
+        "createdAt": "2016-07-29T10:04:48.230Z",
+        "updatedAt": "2016-07-29T10:04:48.230Z",
+        "id": 7
+      },
+      {
+        "name": "shiro",
+        "email": "shiro@gmail.com",
+        "contact": "hgfghjkl;'",
+        "createdAt": "2016-07-29T20:29:07.558Z",
+        "updatedAt": "2016-07-29T20:29:07.558Z",
+        "id": 9
+      },
+      {
+        "name": "caroline nyambra",
+        "email": "karolinanyambura@gmail.com",
+        "contact": "0720923708",
+        "createdAt": "2016-07-29T20:33:07.721Z",
+        "updatedAt": "2016-07-29T20:33:07.721Z",
+        "id": 10
+      },
+      {
+        "name": "victoria wanjiru",
+        "email": "shappay@gmail.com",
+        "contact": "0720637799",
+        "createdAt": "2016-07-29T20:36:21.418Z",
+        "updatedAt": "2016-07-29T20:36:21.418Z",
+        "id": 11
+      }
+    ],
+    "videos": [
+      {
+        "name": "new",
+        "category": "test",
+        "price": "2000",
+        "createdAt": "2016-07-29T13:00:07.722Z",
+        "updatedAt": "2016-07-29T13:00:07.722Z",
+        "id": 8
+      },
+      {
+        "name": "single ldies",
+        "category": "thriller",
+        "price": "60",
+        "createdAt": "2016-07-29T20:31:51.345Z",
+        "updatedAt": "2016-07-29T20:31:51.345Z",
+        "id": 9
+      },
+      {
+        "name": "vanish",
+        "category": "horror",
+        "price": "40",
+        "createdAt": "2016-07-29T20:32:14.872Z",
+        "updatedAt": "2016-07-29T20:32:14.872Z",
+        "id": 10
+      },
+      {
+        "name": "final destination",
+        "category": "horror",
+        "price": "40",
+        "createdAt": "2016-07-29T20:35:44.101Z",
+        "updatedAt": "2016-07-29T20:35:44.101Z",
+        "id": 11
+      }
+    ],
+    "borrowed_videos": [
+      {
+        "user_id": "2",
+        "video_id": "2",
+        "video_name": "stewart little",
+        "video_category": "test",
+        "createdAt": "2016-07-29T12:13:33.146Z",
+        "updatedAt": "2016-07-29T12:13:33.146Z",
+        "id": 28
+      },
+      {
+        "user_id": "2",
+        "video_id": "2",
+        "video_name": "stewart little",
+        "video_category": "test",
+        "createdAt": "2016-07-29T12:16:26.259Z",
+        "updatedAt": "2016-07-29T12:16:26.259Z",
+        "id": 31
+      },
+      {
+        "user_id": "2",
+        "video_id": "1",
+        "video_name": "twiinkie",
+        "video_category": "comedy",
+        "createdAt": "2016-07-29T12:19:44.441Z",
+        "updatedAt": "2016-07-29T12:19:44.441Z",
+        "id": 33
+      },
+      {
+        "user_id": "2",
+        "video_id": "1",
+        "video_name": "twiinkie",
+        "video_category": "comedy",
+        "createdAt": "2016-07-29T12:21:13.293Z",
+        "updatedAt": "2016-07-29T12:21:13.293Z",
+        "id": 34
+      },
+      {
+        "user_id": "2",
+        "video_id": "2",
+        "video_name": "stewart little",
+        "video_category": "test",
+        "createdAt": "2016-07-29T12:26:32.851Z",
+        "updatedAt": "2016-07-29T12:26:32.851Z",
+        "id": 35
+      }
+    ],
+    "payments": [
+      {
+        "user_id": "2",
+        "ammount": "30",
+        "createdAt": "2016-07-29T12:38:18.908Z",
+        "updatedAt": "2016-07-29T12:38:18.908Z",
+        "id": 1
+      },
+      {
+        "user_id": "2",
+        "ammount": "347",
+        "createdAt": "2016-07-29T12:39:53.182Z",
+        "updatedAt": "2016-07-29T12:39:53.182Z",
+        "id": 2
+      },
+      {
+        "user_id": "2",
+        "ammount": "test",
+        "createdAt": "2016-07-29T12:41:03.091Z",
+        "updatedAt": "2016-07-29T12:41:03.091Z",
+        "id": 3
+      },
+      {
+        "user_id": "2",
+        "ammount": "345678",
+        "createdAt": "2016-07-29T12:42:24.300Z",
+        "updatedAt": "2016-07-29T12:42:24.300Z",
+        "id": 4
+      },
+      {
+        "user_id": "2",
+        "ammount": "300",
+        "createdAt": "2016-07-29T12:43:00.778Z",
+        "updatedAt": "2016-07-29T12:43:00.778Z",
+        "id": 5
+      },
+      {
+        "user_id": "2",
+        "ammount": "300",
+        "createdAt": "2016-07-29T12:45:54.534Z",
+        "updatedAt": "2016-07-29T12:45:54.534Z",
+        "id": 6
+      },
+      {
+        "user_id": "7",
+        "ammount": "300",
+        "createdAt": "2016-07-29T13:07:55.053Z",
+        "updatedAt": "2016-07-29T13:07:55.053Z",
+        "id": 7
+      },
+      {
+        "user_id": "9",
+        "ammount": "300",
+        "createdAt": "2016-07-29T20:30:36.467Z",
+        "updatedAt": "2016-07-29T20:30:36.467Z",
+        "id": 8
+      },
+      {
+        "user_id": "10",
+        "ammount": "700",
+        "createdAt": "2016-07-29T20:34:46.875Z",
+        "updatedAt": "2016-07-29T20:34:46.875Z",
+        "id": 9
+      },
+      {
+        "user_id": "11",
+        "ammount": "50",
+        "createdAt": "2016-07-29T20:37:00.781Z",
+        "updatedAt": "2016-07-29T20:37:00.781Z",
+        "id": 10
+      }
+    ],
+    "returned_videos": [
+      {
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": null,
+        "createdAt": "2016-07-29T11:35:25.682Z",
+        "updatedAt": "2016-07-29T11:35:25.682Z",
+        "id": 2
+      },
+      {
+        "video_id": "2",
+        "name": "stewart little",
+        "category": "test",
+        "createdAt": "2016-07-29T11:35:26.531Z",
+        "updatedAt": "2016-07-29T11:35:26.531Z",
+        "id": 3
+      },
+      {
+        "video_id": "2",
+        "name": "stewart little",
+        "category": "test",
+        "createdAt": "2016-07-29T11:35:27.272Z",
+        "updatedAt": "2016-07-29T11:35:27.272Z",
+        "id": 4
+      },
+      {
+        "video_id": "3",
+        "name": "bad",
+        "category": null,
+        "createdAt": "2016-07-29T11:50:20.229Z",
+        "updatedAt": "2016-07-29T11:50:20.229Z",
+        "id": 5
+      },
+      {
+        "video_id": "",
+        "name": "",
+        "category": "",
+        "createdAt": "2016-07-29T11:51:44.614Z",
+        "updatedAt": "2016-07-29T11:51:44.614Z",
+        "id": 6
+      },
+      {
+        "video_id": "",
+        "name": "",
+        "category": "",
+        "createdAt": "2016-07-29T11:51:45.656Z",
+        "updatedAt": "2016-07-29T11:51:45.656Z",
+        "id": 7
+      },
+      {
+        "video_id": "",
+        "name": "",
+        "category": "",
+        "createdAt": "2016-07-29T11:51:46.237Z",
+        "updatedAt": "2016-07-29T11:51:46.237Z",
+        "id": 8
+      },
+      {
+        "video_id": "",
+        "name": "",
+        "category": "",
+        "createdAt": "2016-07-29T11:51:47.316Z",
+        "updatedAt": "2016-07-29T11:51:47.316Z",
+        "id": 9
+      },
+      {
+        "video_id": "",
+        "name": "",
+        "category": "",
+        "createdAt": "2016-07-29T11:51:48.519Z",
+        "updatedAt": "2016-07-29T11:51:48.519Z",
+        "id": 10
+      },
+      {
+        "video_id": "",
+        "name": "",
+        "category": "",
+        "createdAt": "2016-07-29T11:51:49.359Z",
+        "updatedAt": "2016-07-29T11:51:49.359Z",
+        "id": 11
+      },
+      {
+        "video_id": "",
+        "name": "",
+        "category": "",
+        "createdAt": "2016-07-29T11:51:50.102Z",
+        "updatedAt": "2016-07-29T11:51:50.102Z",
+        "id": 12
+      },
+      {
+        "video_id": "",
+        "name": "",
+        "category": "",
+        "createdAt": "2016-07-29T11:51:51.391Z",
+        "updatedAt": "2016-07-29T11:51:51.391Z",
+        "id": 13
+      },
+      {
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T11:55:42.206Z",
+        "updatedAt": "2016-07-29T11:55:42.206Z",
+        "id": 14
+      },
+      {
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T11:55:43.051Z",
+        "updatedAt": "2016-07-29T11:55:43.051Z",
+        "id": 15
+      },
+      {
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T11:55:43.627Z",
+        "updatedAt": "2016-07-29T11:55:43.627Z",
+        "id": 16
+      },
+      {
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T11:55:44.106Z",
+        "updatedAt": "2016-07-29T11:55:44.106Z",
+        "id": 17
+      },
+      {
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T11:55:44.606Z",
+        "updatedAt": "2016-07-29T11:55:44.606Z",
+        "id": 18
+      },
+      {
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T11:56:32.080Z",
+        "updatedAt": "2016-07-29T11:56:32.080Z",
+        "id": 19
+      },
+      {
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T11:56:32.742Z",
+        "updatedAt": "2016-07-29T11:56:32.742Z",
+        "id": 20
+      },
+      {
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T11:56:33.270Z",
+        "updatedAt": "2016-07-29T11:56:33.270Z",
+        "id": 21
+      },
+      {
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T11:56:33.747Z",
+        "updatedAt": "2016-07-29T11:56:33.747Z",
+        "id": 22
+      },
+      {
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T11:56:34.197Z",
+        "updatedAt": "2016-07-29T11:56:34.197Z",
+        "id": 23
+      },
+      {
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T11:56:42.075Z",
+        "updatedAt": "2016-07-29T11:56:42.075Z",
+        "id": 24
+      },
+      {
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T11:56:50.073Z",
+        "updatedAt": "2016-07-29T11:56:50.073Z",
+        "id": 25
+      },
+      {
+        "video_id": "2",
+        "name": "stewart little",
+        "category": "test",
+        "createdAt": "2016-07-29T11:56:51.118Z",
+        "updatedAt": "2016-07-29T11:56:51.118Z",
+        "id": 26
+      },
+      {
+        "video_id": "2",
+        "name": "stewart little",
+        "category": "test",
+        "createdAt": "2016-07-29T11:56:56.628Z",
+        "updatedAt": "2016-07-29T11:56:56.628Z",
+        "id": 27
+      },
+      {
+        "user_id": "2",
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T11:58:17.489Z",
+        "updatedAt": "2016-07-29T11:58:17.489Z",
+        "id": 28
+      },
+      {
+        "user_id": "2",
+        "video_id": "2",
+        "name": "stewart little",
+        "category": "test",
+        "createdAt": "2016-07-29T11:58:34.187Z",
+        "updatedAt": "2016-07-29T11:58:34.187Z",
+        "id": 29
+      },
+      {
+        "user_id": "2",
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T11:58:38.983Z",
+        "updatedAt": "2016-07-29T11:58:38.983Z",
+        "id": 30
+      },
+      {
+        "user_id": "2",
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T12:06:20.428Z",
+        "updatedAt": "2016-07-29T12:06:20.428Z",
+        "id": 31
+      },
+      {
+        "user_id": "2",
+        "video_id": "3",
+        "name": "bad",
+        "category": "horror",
+        "createdAt": "2016-07-29T12:12:02.513Z",
+        "updatedAt": "2016-07-29T12:12:02.513Z",
+        "id": 32
+      },
+      {
+        "user_id": "2",
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T12:12:02.974Z",
+        "updatedAt": "2016-07-29T12:12:02.974Z",
+        "id": 33
+      },
+      {
+        "user_id": "2",
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T12:12:03.387Z",
+        "updatedAt": "2016-07-29T12:12:03.387Z",
+        "id": 34
+      },
+      {
+        "user_id": "2",
+        "video_id": "2",
+        "name": "stewart little",
+        "category": "test",
+        "createdAt": "2016-07-29T12:12:03.754Z",
+        "updatedAt": "2016-07-29T12:12:03.754Z",
+        "id": 35
+      },
+      {
+        "user_id": "2",
+        "video_id": "2",
+        "name": "stewart little",
+        "category": "test",
+        "createdAt": "2016-07-29T12:14:59.213Z",
+        "updatedAt": "2016-07-29T12:14:59.213Z",
+        "id": 36
+      },
+      {
+        "user_id": "2",
+        "video_id": "2",
+        "name": "stewart little",
+        "category": "test",
+        "createdAt": "2016-07-29T12:14:59.813Z",
+        "updatedAt": "2016-07-29T12:14:59.813Z",
+        "id": 37
+      },
+      {
+        "user_id": "2",
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T12:15:00.387Z",
+        "updatedAt": "2016-07-29T12:15:00.387Z",
+        "id": 38
+      },
+      {
+        "user_id": "2",
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T12:15:01.251Z",
+        "updatedAt": "2016-07-29T12:15:01.251Z",
+        "id": 39
+      },
+      {
+        "user_id": "2",
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T12:15:01.943Z",
+        "updatedAt": "2016-07-29T12:15:01.943Z",
+        "id": 40
+      },
+      {
+        "user_id": "2",
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T12:16:29.644Z",
+        "updatedAt": "2016-07-29T12:16:29.644Z",
+        "id": 41
+      },
+      {
+        "user_id": "2",
+        "video_id": "1",
+        "name": "twiinkie",
+        "category": "comedy",
+        "createdAt": "2016-07-29T12:16:30.685Z",
+        "updatedAt": "2016-07-29T12:16:30.685Z",
+        "id": 42
+      },
+      {
+        "user_id": "7",
+        "video_id": "8",
+        "name": "new",
+        "category": "test",
+        "createdAt": "2016-07-29T13:07:40.019Z",
+        "updatedAt": "2016-07-29T13:07:40.019Z",
+        "id": 43
+      },
+      {
+        "user_id": "7",
+        "video_id": "8",
+        "name": "new",
+        "category": "test",
+        "createdAt": "2016-07-29T13:09:52.662Z",
+        "updatedAt": "2016-07-29T13:09:52.662Z",
+        "id": 44
+      },
+      {
+        "user_id": "9",
+        "video_id": "8",
+        "name": "new",
+        "category": "test",
+        "createdAt": "2016-07-29T20:29:33.293Z",
+        "updatedAt": "2016-07-29T20:29:33.293Z",
+        "id": 45
+      },
+      {
+        "user_id": "9",
+        "video_id": "8",
+        "name": "new",
+        "category": "test",
+        "createdAt": "2016-07-29T20:30:20.045Z",
+        "updatedAt": "2016-07-29T20:30:20.045Z",
+        "id": 46
+      },
+      {
+        "user_id": "10",
+        "video_id": "9",
+        "name": "single ldies",
+        "category": "thriller",
+        "createdAt": "2016-07-29T20:33:37.184Z",
+        "updatedAt": "2016-07-29T20:33:37.184Z",
+        "id": 47
+      },
+      {
+        "user_id": "11",
+        "video_id": "11",
+        "name": "final destination",
+        "category": "horror",
+        "createdAt": "2016-07-29T20:36:44.566Z",
+        "updatedAt": "2016-07-29T20:36:44.566Z",
+        "id": 48
+      }
+    ]
+  },
+  "schema": {
+    "foo": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "users": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "members": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "videos": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "borrowed_videos": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "payments": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "returned_videos": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "foo": {
+      "id": 7
+    },
+    "users": {},
+    "videos": {
+      "id": 11
+    },
+    "members": {
+      "id": 11
+    },
+    "borrowed_videos": {
+      "id": 41
+    },
+    "returned_videos": {
+      "id": 48
+    },
+    "payments": {
+      "id": 10
+    }
+  }
+}

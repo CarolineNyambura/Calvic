@@ -54,15 +54,26 @@
  			m("form", {
  				class: "container",
  				onsubmit: function(e) {
- 					console.log("i have been d=mhnbvlij")
- 					membersDb.push({
- 							name: ctrl.name(),
- 							email: ctrl.email(),
- 							password: ctrl.password(),
- 							confirmPassword: ctrl.confirmPassword(),
- 							contact: ctrl.contact()
- 						}),
- 						$('#modal4').closeModal();
+ 					// console.log("i have been d=mhnbvlij")
+ 					// membersDb.push({
+ 					// 		name: ctrl.name(),
+ 					// 		email: ctrl.email(),
+ 					// 		contact: ctrl.contact()
+ 					// 	}),
+
+
+ 					// m.request({
+ 					// 	method:"post",
+ 					// 	url: api + "/members/" + ctrl.name() + "/" + ctrl.email() + "/" + ctrl.contact()
+ 					// }).then(function(res){
+ 					// 	m.route( m.route() )
+ 					// 	$('#modal4').closeModal();
+ 					// },function(err){
+ 					// 	alert(err)
+ 					// 	$('#modal4').closeModal();
+ 					// })
+
+
  					e.preventDefault();
  				}
  			}, [
@@ -77,6 +88,16 @@
  						value: ctrl.name
  					})
  				]),
+ 				// m(".input-field", [
+ 				// 	m("i", {
+ 				// 		class: "mdi-action-lock prefix"
+ 				// 	}),
+ 				// 	input({
+ 				// 		placeholder: "your registration card number",
+ 				// 		oninput: m.withAttr("value", ctrl.rcNo),
+ 				// 		value: ctrl.rcNo
+ 				// 	})
+ 				// ]),
  				m(".input-field", [
  					m("i", {
  						class: "mdi-communication-quick-contacts-mail prefix teal-text"
@@ -85,28 +106,6 @@
  						placeholder: "Email Address",
  						oninput: m.withAttr("value", ctrl.email),
  						value: ctrl.email,
- 					})
- 				]),
- 				m(".input-field", [
- 					m("i", {
- 						class: "mdi-action-lock-outline prefix teal-text"
- 					}),
- 					input({
- 						type: "password",
- 						placeholder: "Password",
- 						oninput: m.withAttr("value", ctrl.password),
- 						value: ctrl.password
- 					})
- 				]),
- 				m(".input-field", [
- 					m("i", {
- 						class: "mdi-action-lock-outline prefix"
- 					}),
- 					input({
- 						type: "password",
- 						placeholder: "Confirm Password",
- 						oninput: m.withAttr("value", ctrl.confirmPassword),
- 						value: ctrl.confirmPassword
  					})
  				]),
  				m(".input-field", [
@@ -130,29 +129,44 @@
  					onclick: function(e) {
  						console.log("clicked")
 
- 						membersDb.push({
- 								name: ctrl.name(),
- 								email: ctrl.email(),
- 								password: ctrl.password(),
- 								confirmPassword: ctrl.confirmPassword(),
- 								contact: ctrl.contact()
- 							}),
+ 						// membersDb.push({
+ 						// 		name: ctrl.name(),
+ 						// 		email: ctrl.email(),
+ 						// 		password: ctrl.password(),
+ 						// 		confirmPassword: ctrl.confirmPassword(),
+ 						// 		contact: ctrl.contact()
+ 						// 	}),
+ 						// 	
+ 						m.request({
+ 							method: "post",
+ 							url: api + "/members/" + ctrl.name() + "/" + ctrl.email() + "/" + ctrl.contact()
+ 						}).then(function(res) {
+ 							m.route(m.route())
  							$('#modal4').closeModal();
+ 						}, function(err) {
+ 							alert(err)
+ 							$('#modal4').closeModal();
+ 						})
+ 						$('#modal4').closeModal();
  					}
- 				}, "Print"),
+ 				}, "Save member"),
  			]),
  		])
  	}
  }
 
+ var api = "http://localhost:8080"
+
  var registration = {
  	controller: function() {
  		return {
- 			registrations: membersDb
+ 			registrations: m.request({
+ 				url: api + "/members"
+ 			})
  		}
  	},
  	view: function(ctrl, args) {
- 		console.log(ctrl.registrations)
+ 		console.log(ctrl.registrations())
  		return m("div", {
  			class: "container"
  		}, [
@@ -184,19 +198,52 @@
  			m("table", [
  				m("thead", [
  					m("tr", [
+ 						m("th", "id"),
  						m("th", "name"),
  						m("th", "email"),
- 						m("th", "password"),
  						m("th", "contact")
  					])
  				]),
  				m("tbody", [
- 					ctrl.registrations.map(function(registration) {
+ 					ctrl.registrations().map(function(registration) {
  						return m("tr", [
- 							m("td", registration.name),
- 							m("td", registration.email),
- 							m("td", registration.password),
- 							m("td", registration.contact)
+ 							m("td", [
+ 								m("a", {
+ 									href: "/member/" + registration.id,
+ 									config: m.route
+ 								}, registration.id)
+ 							]),
+ 							m("td", [
+ 								m("a", {
+ 									href: "/member/" + registration.id,
+ 									config: m.route
+ 								}, registration.name)
+ 							]),
+ 							m("td", [
+ 								m("a", {
+ 									href: "/member/" + registration.id,
+ 									config: m.route
+ 								}, registration.email)
+ 							]),
+ 							m("td", [
+ 								m("a", {
+ 									href: "/member/" + registration.id,
+ 									config: m.route
+ 								}, registration.contact)
+ 							]),
+ 							m("td", [
+ 								m("buttons", {
+ 									class: "btn",
+ 									onclick: function() {
+ 										m.request({
+ 											method: "delete",
+ 											url: api + "/member/" + registration.id
+ 										}).then(function() {
+ 											m.route(m.route())
+ 										})
+ 									}
+ 								}, "remove")
+ 							])
  						])
  					})
  				])

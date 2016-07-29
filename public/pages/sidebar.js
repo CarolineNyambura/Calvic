@@ -26,7 +26,14 @@ var sidebar = {
           // videos catalogue
           m("br"),
           sidebutton({
-            name:"Video Catalogue",
+            name:"Members",
+            icon:"large mdi-action-account-balance-wallet",
+            buttonClick:function(){
+              m.route("/registration")
+            }
+          }),
+          sidebutton({
+            name:"Videos",
             icon:"large mdi-action-view-carousel",
             buttonClick:function(){
               m.route("/videos")
@@ -44,20 +51,6 @@ var sidebar = {
             icon:"large mdi-action-trending-up",
             buttonClick:function(){
               m.route("/returned")
-            }
-          }),
-          sidebutton({
-            name:"Your Billings",
-            icon:"large mdi-action-account-balance-wallet",
-            buttonClick:function(){
-              m.route("/billing")
-            }
-          }),
-          sidebutton({
-            name:"Registration",
-            icon:"large mdi-action-account-balance-wallet",
-            buttonClick:function(){
-              m.route("/registration")
             }
           })
         ])

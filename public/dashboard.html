@@ -8,9 +8,9 @@
   <script src="pages/borrowed.js"></script>
   <script src="pages/returned.js"></script>
   <script src="pages/videos.js"></script>
+  <script src="pages/memberDetails.js"></script>
   <script src="pages/registration.js"></script>
-
-  
+  <script src="pages/foos.js"></script>
 
   <!-- CSS  -->
   <link href="./css/materialize.min.css" rel="stylesheet">
@@ -89,6 +89,12 @@
       }),
       "/registration":m(layoutComponent,{
         body:registration
+      }),
+      "/foos":m(layoutComponent,{
+        body:foosComponent
+      }),
+      "/member/:member_id":m(layoutComponent,{
+        body:memberDetailsComponent
       })
     })
 

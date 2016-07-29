@@ -1,28 +1,23 @@
    var borrowedDb = [{
-     name: "single ladies",
      category: "thriller",
      dateBorrowed: "29-06-016",
-     dateOfReturn: "01-07-016"
+     billings: "shs.60/-"
    }, {
-     name: "brave",
      category: "cartoon",
      dateBorrowed: "30-06-016",
-     dateOfReturn: "03-07-016"
+     billings: "shs.80/-"
    }, {
-     name: "originals",
      category: "general",
      dateBorrowed: "01-07-016",
-     dateOfReturn: "03-07-016"
+     billings: "shs.50/-"
    }, {
-     name: "vanish",
      category: "horror",
      dateBorrowed: "02-07-016",
-     dateOfReturn: "05-07-016"
+     billings: "shs.40/-"
    }, {
-     name: "two broke girls",
      category: "comedy",
      dateBorrowed: "03-07-016",
-     dateOfReturn: "07-07-016"
+     billings: "shs.40/-"
    }, ]
 
    //call this function to make a modal
@@ -52,37 +47,40 @@
    var borrowedForm = {
      controller: function() {
        return {
-         name: m.prop(""),
+         Id: m.prop(""),
          category: m.prop(""),
          dateBorrowed: m.prop(""),
-         dateOfReturn: m.prop("")
+         billings: m.prop("")
        }
      },
      view: function(ctrl, args) {
        // body...
        return m("div", [
          m(".modal-header", [
-           m("p", "Please input a new video name")
+           m("p", "Please input a new borrowed movie")
          ]),
 
          m("form", {
            class: "container",
            onsubmit: function(e) {
-             console.log("i have been logged")
+             m.request({
+                 url: "localhost:8080/newborrow/01-07-016"
+               }),
+               console.log("i have been logged")
              borrowedDb.push({
-                 name: ctrl.name(),
+                 id: ctrl.Id(),
                  category: ctrl.category(),
                  dateBorrowed: ctrl.dateBorrowed(),
-                 dateOfReturn: ctrl.dateOfReturn()
+                 billings: ctrl.billings()
                }),
                $('#modal2').closeModal();
              e.preventDefault();
            }
          }, [
            input({
-             placeholder: "name",
-             oninput: m.withAttr("value", ctrl.name),
-             value: ctrl.name
+             placeholder: "Movie Id",
+             oninput: m.withAttr("value", ctrl.Id),
+             value: ctrl.Id
            }),
            input({
              placeholder: "category",
@@ -95,10 +93,10 @@
              value: ctrl.dateBorrowed
            }),
            input({
-             placeholder: "dateOfReturn",
-             oninput: m.withAttr("value", ctrl.dateOfReturn),
-             value: ctrl.dateOfReturn
-           }),
+             placeholder: "billings",
+             oninput: m.withAttr("value", ctrl.billings),
+             value: ctrl.billings
+           })
          ]),
 
          m(".modal-footer", [
@@ -109,16 +107,16 @@
                console.log("clicked")
 
                borrowedDb.push({
-                   name: ctrl.name(),
+                   Id: ctrl.Id(),
                    category: ctrl.category(),
                    dateBorrowed: ctrl.dateBorrowed(),
-                   dateOfReturn: ctrl.dateOfReturn()
+                   billings: ctrl.billings()
                  }),
                  $('#modal2').closeModal();
-               ctrl.name("")
+               ctrl.Id("")
                ctrl.category("")
                ctrl.dateBorrowed("")
-               ctrl.dateOfReturn("")
+               ctrl.billings("")
                e.preventDefault();
              }
            }, "save"),
@@ -142,7 +140,7 @@
            m("br"),
            m(".col l6", m("h5", {
              class: "header"
-           }, "The following is a list of the borrowed videos")),
+           }, "Record for the borrowed DVDs")),
            m(".col l6", [
              m("br"),
              m("a", {
@@ -165,19 +163,21 @@
          m("table", [
            m("thead", [
              m("tr", [
-               m("th", "Name"),
-               m("th", "Category"),
+               m("th", "Id"),
+               m("th", "category"),
                m("th", "dateBorrowed"),
-               m("th", "dateOfReturn")
+               m("th", "dateOfReturn"),
+               m("th", "billings")
              ])
            ]),
            m("tbody", [
              ctrl.borrowings.map(function(borrowing) {
                return m("tr", [
-                 m("td", borrowing.name),
+                 m("td", borrowing.Id),
                  m("td", borrowing.category),
                  m("td", borrowing.dateBorrowed),
-                 m("td", borrowing.dateOfReturn)
+                 m("td", borrowing.dateOfReturn),
+                 m("td", borrowing.billings)
                ])
              })
            ])

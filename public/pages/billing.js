@@ -1,5 +1,6 @@
 	var billingDb = [{
 			name: "Caroline Nyambura",
+			membershipNo: "1",
 			movieName: "originals",
 			category: "horror",
 			moviesBorrowed: "3",
@@ -7,6 +8,7 @@
 			contact: "0720923708"
 		}, {
 			name: "Branson Gitomeh",
+			membershipNo: "2",
 			movieName: "empire",
 			category: "general",
 			moviesBorrowed: "4",
@@ -51,7 +53,7 @@
 			// body...
 			return m("div", [
 				m(".modal-header", [
-					m("p", "Membership Card")
+					m("p", "Receipt")
 				]),
 
 				m("form", {
@@ -72,18 +74,25 @@
 					m("div", {
 						class: "row"
 					}, [
-						m(".input-field", [
+						m(".input-field col l6", [
 							input({
 								placeholder: "your full name",
 								oninput: m.withAttr("value", ctrl.name),
 								value: ctrl.name
 							})
 						]),
+						m(".input-field col l6", [
+							input({
+								placeholder: "your membership number",
+								oninput: m.withAttr("value", ctrl.membershipNo),
+								value: ctrl.membershipNo
+							})
+						]),
 						m(".input-field", [
 							input({
-								placeholder: "name of the movie",
-								oninput: m.withAttr("value", ctrl.movieName),
-								value: ctrl.movieName,
+								placeholder: "Movie Id",
+								oninput: m.withAttr("value", ctrl.Id),
+								value: ctrl.Id,
 							})
 						]),
 						m(".input-field col l6", [
@@ -108,7 +117,8 @@
 								oninput: m.withAttr("value", ctrl.contact),
 								value: ctrl.contact
 							})
-						]), 
+						]),
+
 						// < p >
 						//   <input type="checkbox" id="test6" checked="checked" />
 						//   <label for="test6">Yellow</label>
@@ -158,6 +168,7 @@
 			return m("div", {
 				class: "container"
 			}, [
+
 				m(".row", [
 					m("br"),
 					m(".col l6", m("h5", {
@@ -187,9 +198,8 @@
 					m("thead", [
 						m("tr", [
 							m("th", "name"),
-							m("th", "movieName"),
+							m("th", "Id"),
 							m("th", "category"),
-							m("th", "moviesBorrowed"),
 							m("th", "contact")
 						])
 					]),
@@ -197,9 +207,8 @@
 						ctrl.billings.map(function(billing) {
 							return m("tr", [
 								m("td", billing.name),
-								m("td", billing.movieName),
+								m("td", billing.Id),
 								m("td", billing.category),
-								m("td", billing.moviesBorrowed),
 								m("td", billing.contact)
 							])
 						})
